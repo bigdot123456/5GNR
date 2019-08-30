@@ -1,0 +1,26 @@
+Note
+
+builHG          >       Only needed if not usign back substitution  (very slow)
+ldpcTxSystem    >       Contain the message passing decoder matlab implementation (very slow)
+                        Contain a message passing decoder C implementation [mexdecoder.c] (faster but not optimal)
+ldpcTxSystemFast>       Contain a message passing decoder C implementation [mexfastdecoder.c] (fastest, but break the compatibility with the previous matlab code)
+ldpcTest        >       Test for ldpcTxSystem
+ldpcTestFast    >       Test for ldpcTxSystemFast
+
+
+Not really useful file (SHOULD BE CONSIDERED DEPRECATED):
+buildHG
+ldpcTxSystem
+ldpcTest
+mexdecoder.c
+
+## MATLAB R2016
+
+From this version of MATLAB (maybe also others before), MATLAB tries to start a parallel pool automatically when a parfor keywork is reached, making the flag parallelComputation unuseful.
+
+To disable this go to unchek Preferences > Parallel computating toolbox > Automaticallly create parallel pool.
+
+## References
+
+`doc/LDPC notes.pdf` are notes on the LDPC codes from the course I've attended at University of Padova.
+`doc/presentazione.pdf` is a presentation on this project which contains very useful information for understanding the code.
